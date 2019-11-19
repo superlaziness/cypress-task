@@ -1,0 +1,9 @@
+.tmp
+.idea
+node_modules
+npm-debug.log
+.DS_Store
+.cache
+cypress/videos
+cypress/screenshots
+cypress/snapshots
