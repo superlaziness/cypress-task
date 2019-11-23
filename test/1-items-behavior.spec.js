@@ -43,18 +43,12 @@ describe('1 Items behavior', () => {
         article.header('Getting started').should('be.visible');
     });
 
-    // DOC-1234 (bug id in bug tracker example)
-    it.skip('4 Parent item without content should expand on click', () => {
+    it('4 Parent item without content should expand on click', () => {
         tableOfContent.item('Analyzing application').click();
-
-        // TODO: bug? seems like item without selection doesn't get selection
-        tableOfContent
-            .item('Analyzing application')
-            .should('have.class', 'toc-item--selected');
 
         tableOfContent
             .item('Install IntelliJ IDEA')
-            .should('not.have.class', 'toc-item--selected');
+            .should('have.class', 'toc-item--selected');
 
         tableOfContent.item('Profiling tools').should('be.visible');
 
