@@ -10,7 +10,7 @@ describe('1 Items behavior', () => {
     });
 
     it('1 Menu should be visible', () => {
-        tableOfContent.instance().should('be.visible');
+        tableOfContent.menu().should('be.visible');
     });
 
     it('2 Selected by default parent item should show content and be expanded', () => {
@@ -43,17 +43,18 @@ describe('1 Items behavior', () => {
         article.header('Getting started').should('be.visible');
     });
 
-    it('4 Parent item without content should expand on click', () => {
+    // DOC-1234 (bug id in bug tracker example)
+    it.skip('4 Parent item without content should expand on click', () => {
         tableOfContent.item('Analyzing application').click();
 
         // TODO: bug? seems like item without selection doesn't get selection
-        // tableOfContent
-        //     .item('Analyzing application')
-        //     .should('have.class', 'toc-item--selected');
+        tableOfContent
+            .item('Analyzing application')
+            .should('have.class', 'toc-item--selected');
 
-        // tableOfContent
-        //     .item('Install IntelliJ IDEA')
-        //     .should('not.have.class', 'toc-item--selected');
+        tableOfContent
+            .item('Install IntelliJ IDEA')
+            .should('not.have.class', 'toc-item--selected');
 
         tableOfContent.item('Profiling tools').should('be.visible');
 

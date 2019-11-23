@@ -1,6 +1,14 @@
 class TableOfContent {
-    instance() {
+    menu() {
         return cy.get('[data-test=toc]');
+    }
+
+    container() {
+        return cy.get('.layout .app__sidebar');
+    }
+
+    burgerButton() {
+        return cy.get('[data-test="header-hamburger"]');
     }
 
     item(itemText) {
